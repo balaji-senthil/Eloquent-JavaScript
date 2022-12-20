@@ -1,9 +1,9 @@
-function reduce(array, reducerFn, start){
-  let currentElement = start
+function reduce(array, reducerFn, seedValue = 0){
+  let reducedValue = seedValue
   for(let element of array){
-    currentElement = reducerFn(currentElement, element)
+    reducedValue = reducerFn(reducedValue, element)
   }
-  return currentElement
+  return reducedValue
 }
 
-console.log(reduce([1, 2, 3, 4], (a, b) => a + b, 0))
+console.log(reduce([1, 2, 3, 4], (a, b) => a + b))
